@@ -12,7 +12,7 @@
 
             var aa = yes.trim().split(".")
 
-            var bb = aa[1]
+            var bb = aa[Math.round(aa.length / 2) - 1]
 
             var webname = bb.replace(bb.charAt(0), bb.charAt(0).toUpperCase());
             document.write("<p>" + webname + ". (" + new Date().getFullYear() + "). " + document.title + ". <i>" + webname + ".</i> Retrieved from " + window.location + "</p>");
