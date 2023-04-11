@@ -10,7 +10,9 @@
             var prmpt = prompt("Copy and paste the link of the website you want to cite:");
             var yes = prmpt.toString()
 
-            var aa = yes.trim().split(".")
+            var ok = yes.split("/")
+
+            var aa = ok[2].trim().split(".")
 
             var bb = aa[Math.round(aa.length / 2) - 1]
 
