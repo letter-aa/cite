@@ -4,11 +4,12 @@
     <title>Cite a page!</title>
 </head>
 <body>
-    <button onclick = cite()>Click on this button to cite a page!</button>
+    <button id="button">Click on this button to cite a page!</button>
     <script>
-        function cite(){
+        var but = document.getElementById("button")
+        but.addEventListener('click',function(){
             var prmpt = prompt("Copy and paste the link of the website you want to cite:");
-            var yes = prmpt.toString()
+            var yes = prmpt + ''
 
             var ok = yes.split("/")
 
@@ -17,8 +18,12 @@
             var bb = aa[Math.round(aa.length / 2) - 1]
 
             var webname = bb.replace(bb.charAt(0), bb.charAt(0).toUpperCase());
-            document.write("<p>" + webname + ". (" + new Date().getFullYear() + "). " + document.title + ". <i>" + webname + ".</i> Retrieved from " + yes + "</p>");
-        }
+
+            var prmpt2 = prompt("Please enter the main title of the webpage you want to cite. (This is the text that appears in the tab or window title bar at the top of your web browser. It usually describes the content of the webpage in a few words, and may include the name of the website. For example, the title of a webpage on the CNN website might be 'Breaking News | CNN'.)")
+            var no = prmpt2 + ''
+
+            document.write("<p>" + webname + ". (" + new Date().getFullYear() + "). " + no + ". <i>" + webname + ".</i> Retrieved from " + yes + "</p>");
+        }, false)
     </script>
 </body>
 </html>
